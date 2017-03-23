@@ -7,10 +7,7 @@ $('textarea').keyup(function(){
     length = maxLength-length;
     $('.counter').text(length);
      if (length < 0){
-        $('.counter').css('color', 'red');
-    }
-    else{
-        next();
+        $('.counter').css('color', 'red');    
     }
 });
 
