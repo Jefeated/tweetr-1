@@ -1,0 +1,8 @@
+$(function(){
+
+$('textarea').keyup(function(){
+  
+    
+});
+
+});
