@@ -5,6 +5,7 @@
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
+
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
     <!-- Roboto Condensed Font-->
@@ -26,6 +27,8 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
 
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <script type="text/javascript" src="/scripts/compose-button.js"></script>
   
   <script> function validateForm() {
   var x = document.forms["submit-form"]["text"].value;
@@ -33,7 +36,7 @@
       alert("Can not submit an empty form");
       return false;
   }
-  else if ( x < 0 ) {
+  else if ( x > 140 ) {
       alert ("Exceed charater limit");
       return false;
   }       
@@ -50,7 +53,7 @@
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
 
-    <button type="button">Compose</button>
+    <button type="button" id="compose-button">Compose</button>
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -71,19 +74,19 @@
 
       <section id ="tweets-posted">
 
-        <article class="tweet-post">
-          <header id ="tweet-header">
+        <!--<article class="tweet-post">
+          <header class="tweet-header">
               <img class="icon" src ="/images/hippo.png">
               <h2>Name Here</h2>
-              <p class="handler"> @someone </p>
+              <p class="handler">@someone</p>
           </header>
           <main>
           <p id = 'tweettext'>text</p>
           </main>
           <footer>
-            <p class="created"> footer...days ago</p>
+            <p class="created">footer...days ago</p>
           </footer>
-        </article>
+        </article>-->
 
       </section>
 
