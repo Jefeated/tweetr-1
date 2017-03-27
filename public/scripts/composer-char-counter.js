@@ -7,7 +7,7 @@ $('textarea').keyup(function(){
     $('.counter').text(length);
      if (length < 0){
         $('.counter').css('color', 'red');    
-    }
+     }
 });
 
 });

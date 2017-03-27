@@ -55,25 +55,24 @@ function loadtweets(){
 
 $('#submit-form').on('submit', function (event) {
     event.preventDefault(); 
-    $.ajax({
-      url:'/tweets',
-      method: 'POST',
-      data: $("textarea").serialize()
-    }).done(function(tweets) {
-      
-    });
+      $.ajax({
+        url:'/tweets',
+        method: 'POST',
+        data: $("textarea").serialize()
+      }).done(function(tweets) {    
+      });
 });
 
 function validateForm() {
   var x = document.forms["submit-form"]["text"].value;
-  if (x == "") {
+    if (x == "") {
       alert("Can not submit an empty form");
       return false;
-  }
-  else if ( x > 140 ) {
+    }
+    else if ( x > 140 ) {
       alert ("Exceeded charater limit");
       return false;
-  }       
+    }       
 }
 
 function renderTweets(tweets) {
@@ -81,7 +80,7 @@ function renderTweets(tweets) {
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
     for(i=0; i<tweets.length; i++){
-      $('#tweets-posted').append(createTweetElement(tweets[i]));
+      $('#tweets-posted').prepend(createTweetElement(tweets[i]));
     }
 }
 
