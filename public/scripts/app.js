@@ -72,7 +72,7 @@ $('#submit-form').on('submit', function (event) {
 });
 
 function validateForm(text) {
-  if (text.val().length === 0) {
+  if ($.trim(text.val().length === 0)) {
     alert("Can not submit an empty form");
     return false;
   }
