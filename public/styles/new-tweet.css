@@ -1,27 +1,26 @@
- .new-tweet {
-    border-radius: 5px;
-    margin-left: 2em;
-    margin-right: 2em;
-    text-align: left;
-    background-color: #efefef;
-    padding:10px;
-    border: 1px solid #ccc;
- }
+.new-tweet {
+	border-radius: 5px;
+	margin-left: 2em;
+	margin-right: 2em;
+	text-align: left;
+	background-color: #efefef;
+	padding:10px;
+	border: 1px solid #ccc;
+}
 
- .new-tweet textarea {
-     width:100%;
+.new-tweet textarea {
+	width:100%;
+}
 
- }
+.new-tweet h2 {
+	margin-top: 0;
+	text-align: left;
+	border-bottom: 1px solid #000;
+}
 
- .new-tweet h2 {
-     margin-top: 0;
-     text-align: left;
-     border-bottom: 1px solid #000;
- }
-
- .counter{
-     padding-top:4px;
-     float: right;
-     font-size: 14px;
-     font-style: italic;
- }
+.counter{
+	padding-top:4px;
+	float: right;
+	font-size: 14px;
+	font-style: italic;
+}
