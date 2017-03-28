@@ -43,7 +43,6 @@ function timeSince(date) {
 
 $(function(){
 
-loadtweets();
 
 function loadtweets(){
   $.ajax({
@@ -54,25 +53,36 @@ function loadtweets(){
 };
 
 $('#submit-form').on('submit', function (event) {
-    event.preventDefault(); 
+    event.preventDefault();
+    var text = $('#submit-form textarea');
+
+    if(validateForm(text)) {
       $.ajax({
-        url:'/tweets',
         method: 'POST',
-        data: $("textarea").serialize()
-      }).done(function(tweets) {    
+        url:'/tweets',
+        data: text.serialize(),
+        success: function(){
+          alert('submitted');
+          loadtweets();
+          text.val('');
+          $('.counter').text(140)
+        }   
       });
+    }
 });
 
-function validateForm() {
-  var x = document.forms["submit-form"]["text"].value;
-    if (x == "") {
-      alert("Can not submit an empty form");
-      return false;
-    }
-    else if ( x > 140 ) {
-      alert ("Exceeded charater limit");
-      return false;
-    }       
+function validateForm(text) {
+  if (text.val().length === 0) {
+    alert("Can not submit an empty form");
+    return false;
+  }
+  else if (text.val().length > 140 ) {
+    alert ("Exceeded charater limit");
+    return false;
+  }
+  else {
+    return true;
+  }       
 }
 
 function renderTweets(tweets) {
@@ -116,4 +126,7 @@ function createfooter(data){
       $footer.append($('<p class=created>').text(timeSince(data.created_at)));
 return $footer;
 }
+
+loadtweets();
+
 });

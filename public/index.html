@@ -29,19 +29,7 @@
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
     <script type="text/javascript" src="/scripts/compose-button.js"></script>
-  
-  <script> function validateForm() {
-  var x = document.forms["submit-form"]["text"].value;
-  if (x === "") {
-      alert("Can not submit an empty form");
-      return false;
-  }
-  else if ( x > 140 ) {
-      alert ("Exceed charater limit");
-      return false;
-  }       
-}
-</script>
+
 
   </head>
 
@@ -64,7 +52,7 @@
         <section class="new-tweet">
           <h2>Compose Tweet</h2>
 
-          <form action="/tweets" method='POST' id="submit-form" onsubmit="return validateForm()">
+          <form action="/tweets" method='POST' id="submit-form">
             <textarea name="text" placeholder="What are you humming about?"></textarea>
             <input type="submit" value="Tweet">
             <span class="counter">140</span>
